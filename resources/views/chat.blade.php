@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -68,7 +69,7 @@
         .chat-container {
             display: flex;
             flex-direction: column;
-            height: 100vh;
+            height: calc(100vh - 40px);
             background-color: #f6f6f6;
         }
 
@@ -106,24 +107,26 @@
 
         .message-box {
             display: flex;
-            flex-direction: row;
             align-items: center;
             justify-content: space-between;
             gap: 10px;
+            padding: 10px;
+            background-color: #fff;
         }
 
         textarea {
-            width: 80%;
-            height: 50px;
+            flex: 1;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
             resize: none;
             font-size: 14px;
+            height: 50px;
+            width: 75vw;
         }
 
         button {
-            width: 15%;
+            width: 80px;
             background-color: #7e57c2;
             color: white;
             padding: 10px;
@@ -136,79 +139,56 @@
         button:hover {
             background-color: #5e35b1;
         }
-
-        /* To style the response box */
-        .response-box {
-            margin-top: 10px;
-            padding: 10px;
-            background-color: #e1bee7;
-            border-radius: 5px;
-            color: #4b0082;
-            font-size: 14px;
-            line-height: 1.5;
-        }
-
     </style>
 </head>
+
 <body>
-     <!-- Sidebar -->
-     <div class="sidebar">
+    <!-- Sidebar -->
+    <div class="sidebar">
         <div class="profile"></div>
         <div class="menu-item">Home</div>
         <div class="menu-item active">Chat</div>
         <div class="menu-item">Settings</div>
         <div class="menu-item">Profile</div>
     </div>
+
     <!-- Main Content -->
     <div class="content">
         <div class="chat-container">
             <div class="chat-box" id="chatBox">
                 <!-- User and Llama messages will appear here -->
+                @foreach ($messages as $message)
+                    <div class="message {{ $message['sender'] == 'user' ? 'user-message' : 'llama-message' }}">
+                        {!! $message['text'] !!}
+                    </div>
+                @endforeach
             </div>
-    
+
             <div class="message-box">
-                <textarea id="userMessage" placeholder="Type your message..."></textarea>
-                <button onclick="sendMessage()">Send</button>
+                <form action="{{ route('chat.generate') }}" method="POST" id="chatForm">
+                    @csrf
+                    <textarea id="userMessage" name="prompt" placeholder="Type your message..." onkeydown="handleKeyDown(event)">{{ old('prompt') }}</textarea>
+                    <button type="submit">Send</button>
+                </form>
             </div>
         </div>
     </div>
 
     <script>
-        function appendMessage(message, type) {
-            const chatBox = document.getElementById('chatBox');
-            const messageDiv = document.createElement('div');
-            messageDiv.classList.add('message');
-            messageDiv.classList.add(type);
+        const chatBox = document.getElementById('chatBox');
 
-            messageDiv.innerHTML = message;
-            chatBox.appendChild(messageDiv);
-
-            // Scroll to the bottom to show the latest message
+        // Scroll to the bottom of the chat box on page load
+        window.onload = () => {
             chatBox.scrollTop = chatBox.scrollHeight;
-        }
+        };
 
-        async function sendMessage() {
-            const userMessage = document.getElementById('userMessage').value;
-            if (userMessage.trim() === '') return;
-
-            // Display user's message
-            appendMessage(userMessage, 'user-message');
-            document.getElementById('userMessage').value = ''; // Clear input field
-
-            try {
-                // Make the POST request to the backend
-                const response = await axios.post('/chatbot', { message: userMessage });
-
-                // Display Llama's response
-                const reply = response.data.reply || 'No response from Llama.';
-                appendMessage(reply, 'llama-message');
-            } catch (error) {
-                console.error('Error sending message:', error);
-                appendMessage('An error occurred. Please try again.', 'llama-message');
+        function handleKeyDown(event) {
+            if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault(); // Prevent default behavior (new line)
+                document.getElementById('chatForm').submit(); // Submit the form
             }
         }
     </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </body>
+
 </html>
