@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\ChatbotController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\LlamaController;
 
 Auth::routes();
 
@@ -18,15 +19,16 @@ Route::get('/services', function () {
 Route::get('/jobs', function () {
     return view('jobs');
 })->name('jobs');
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
 
 Route::get('/chatbot', [ChatbotController::class, 'index']);
 Route::post('/chatbot/send', [ChatbotController::class, 'sendMessage']);
 
-use App\Http\Controllers\LlamaController;
 
 Route::get('/chat', [LlamaController::class, 'index'])->name('chat.index');
 Route::post('/chat', [LlamaController::class, 'generate'])->name('chat.generate');
-
 
 Route::get('/quiz', [QuizController::class, 'showQuiz'])->name('quiz');
 
