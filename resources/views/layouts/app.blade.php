@@ -89,7 +89,7 @@
     </style>
 </head>
 
-<body class="bg-[#F8FAFF] text-gray-900 p-h-10">
+<body class="bg-[#F8FAFF] text-gray-900">
 
     <!-- Navbar -->
     <nav class="flex justify-between items-center py-4 px-8 bg-[#F8FAFF]">
@@ -109,7 +109,7 @@
         </ul>
 
         <!-- Login Button -->
-        <a href="#" class="py-2 px-4 text-white rounded theme-bg theme-hover">Log In</a>
+        <a href="{{ route('login') }}" class="py-2 px-4 text-white rounded theme-bg theme-hover">Log In</a>
     </nav>
 
     <!-- Dynamic Content -->
