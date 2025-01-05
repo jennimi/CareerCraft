@@ -32,8 +32,9 @@ Route::get('/quiz', [QuizController::class, 'showQuiz'])->name('quiz');
 
 Route::get('/roadmap/{job}', [QuizController::class, 'showRoadmap'])->name('roadmap');
 
+Route::get('/subscribe/{plan}', [ServiceController::class, 'subscribe'])->name('subscribe');
+Route::post('/quiz', [QuizController::class, 'submitQuiz'])->name('quiz.submit');
+
 Route::middleware(['auth'])->group(function () {
-    Route::post('/quiz', [QuizController::class, 'submitQuiz'])->name('quiz.submit');
-    Route::post('/subscribe/{plan}', [ServiceController::class, 'subscribe'])->name('subscribe');
 });
 

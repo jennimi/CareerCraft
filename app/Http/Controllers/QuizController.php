@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class QuizController extends Controller
 {
@@ -16,6 +17,10 @@ class QuizController extends Controller
 
     public function submitQuiz(Request $request)
     {
+        if (!Auth::check()) {
+            return redirect()->route('login')->with('info', 'You need to log in to view the result.');
+        }
+
         $questions = json_decode(file_get_contents(base_path('resources/js/questions.js')), true);
         $request->validate([
             'answers' => 'required|array',

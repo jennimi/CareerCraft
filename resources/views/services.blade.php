@@ -56,7 +56,7 @@
                     <li>Access detailed career roadmaps</li>
                 </ul>
                 <p class="text-2xl font-bold text-gray-900 mb-6">IDR 150,000/month</p>
-                <a href="#" class="py-2 px-4 bg-[#766FFF] text-white rounded hover:bg-[#6858f2] transition">
+                <a href="{{ route('subscribe', ['plan' => 'Standard']) }}" class="py-2 px-4 bg-[#766FFF] text-white rounded hover:bg-[#6858f2] transition">
                     Subscribe Now
                 </a>
             </div>
@@ -70,7 +70,7 @@
                     <li>Personalized career guidance</li>
                 </ul>
                 <p class="text-2xl font-bold text-gray-900 mb-6">IDR 300,000/month</p>
-                <a href="#" class="py-2 px-4 bg-[#766FFF] text-white rounded hover:bg-[#6858f2] transition">
+                <a href="{{ route('subscribe', ['plan' => 'Premium']) }}" class="py-2 px-4 bg-[#766FFF] text-white rounded hover:bg-[#6858f2] transition">
                     Subscribe Now
                 </a>
             </div>
