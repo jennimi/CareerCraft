@@ -22,6 +22,12 @@ Route::get('/jobs', function () {
 Route::get('/chatbot', [ChatbotController::class, 'index']);
 Route::post('/chatbot/send', [ChatbotController::class, 'sendMessage']);
 
+use App\Http\Controllers\LlamaController;
+
+Route::get('/chat', [LlamaController::class, 'index'])->name('chat.index');
+Route::post('/chat', [LlamaController::class, 'generate'])->name('chat.generate');
+
+
 Route::get('/quiz', [QuizController::class, 'showQuiz'])->name('quiz');
 
 Route::get('/roadmap/{job}', [QuizController::class, 'showRoadmap'])->name('roadmap');

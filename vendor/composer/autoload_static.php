@@ -526,6 +526,7 @@ class ComposerStaticInit966fde68966827c2898547524703ce57
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\ChatbotController' => __DIR__ . '/../..' . '/app/Http/Controllers/ChatbotController.php',
+        'App\\Http\\Controllers\\ChatbotController' => __DIR__ . '/../..' . '/app/Http/Controllers/ChatbotController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\QuizController' => __DIR__ . '/../..' . '/app/Http/Controllers/QuizController.php',
