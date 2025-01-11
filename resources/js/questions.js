@@ -1,152 +1,152 @@
 [
     {
         "id": 1,
-        "question": "I enjoy solving puzzles and logical problems.",
-        "weights": {"programmer": 2, "ceo": 0, "vcd": 0}
+        "question": "I enjoy spending time alone to recharge my energy.",
+        "weights": {"I": 2, "E": 0}
     },
     {
         "id": 2,
-        "question": "I prefer working alone to focus on tasks.",
-        "weights": {"programmer": 2, "ceo": 0, "vcd": 0}
+        "question": "I find myself energized by engaging with groups of people.",
+        "weights": {"I": 0, "E": 2}
     },
     {
         "id": 3,
-        "question": "I enjoy experimenting with different visual styles and tools.",
-        "weights": {"programmer": 0, "ceo": 0, "vcd": 2}
+        "question": "I prefer focusing on the details of a task rather than the bigger picture.",
+        "weights": {"S": 2, "N": 0}
     },
     {
         "id": 4,
-        "question": "I feel confident making decisions for a team.",
-        "weights": {"programmer": 0, "ceo": 2, "vcd": 0}
+        "question": "I enjoy exploring abstract concepts and imagining possibilities.",
+        "weights": {"S": 0, "N": 2}
     },
     {
         "id": 5,
-        "question": "I take my time in decorating PowerPoint slides.",
-        "weights": {"programmer": 0, "ceo": 0, "vcd": 2}
+        "question": "I rely on logic and objective analysis when making decisions.",
+        "weights": {"T": 2, "F": 0}
     },
     {
         "id": 6,
-        "question": "I enjoy planning and strategizing long-term goals.",
-        "weights": {"programmer": 0, "ceo": 2, "vcd": 0}
+        "question": "I prioritize how decisions will affect others' feelings and relationships.",
+        "weights": {"T": 0, "F": 2}
     },
     {
         "id": 7,
-        "question": "I like following structured workflows and procedures.",
-        "weights": {"programmer": 2, "ceo": 0, "vcd": 0}
+        "question": "I like having a clear plan and sticking to it.",
+        "weights": {"J": 2, "P": 0}
     },
     {
         "id": 8,
-        "question": "I enjoy creating visual content, like posters or graphics.",
-        "weights": {"programmer": 0, "ceo": 0, "vcd": 2}
+        "question": "I prefer to adapt as I go rather than sticking to a fixed plan.",
+        "weights": {"J": 0, "P": 2}
     },
     {
         "id": 9,
-        "question": "I feel comfortable taking risks to achieve my goals.",
-        "weights": {"programmer": 0, "ceo": 2, "vcd": 0}
+        "question": "I enjoy brainstorming and generating ideas with others.",
+        "weights": {"I": 0, "E": 2}
     },
     {
         "id": 10,
-        "question": "I pay close attention to detail when completing a task.",
-        "weights": {"programmer": 2, "ceo": 0, "vcd": 2}
+        "question": "I focus on practical and tangible details when solving problems.",
+        "weights": {"S": 2, "N": 0}
     },
     {
         "id": 11,
-        "question": "I enjoy brainstorming creative ideas with others.",
-        "weights": {"programmer": 0, "ceo": 1, "vcd": 2}
+        "question": "I often trust my gut feeling over concrete evidence.",
+        "weights": {"S": 0, "N": 2}
     },
     {
         "id": 12,
-        "question": "I enjoy working with numbers and data.",
-        "weights": {"programmer": 2, "ceo": 0, "vcd": 0}
+        "question": "I value fairness and logic over emotional considerations.",
+        "weights": {"T": 2, "F": 0}
     },
     {
         "id": 13,
-        "question": "I like influencing and persuading others.",
-        "weights": {"programmer": 0, "ceo": 2, "vcd": 0}
+        "question": "I make decisions with empathy and care about people's well-being.",
+        "weights": {"T": 0, "F": 2}
     },
     {
         "id": 14,
-        "question": "I prefer hands-on work to theoretical discussions.",
-        "weights": {"programmer": 1, "ceo": 1, "vcd": 2}
+        "question": "I enjoy completing tasks in a structured and organized manner.",
+        "weights": {"J": 2, "P": 0}
     },
     {
         "id": 15,
-        "question": "I enjoy creating systems and solving technical problems.",
-        "weights": {"programmer": 2, "ceo": 0, "vcd": 0}
+        "question": "I prefer to keep my options open and make decisions last minute.",
+        "weights": {"J": 0, "P": 2}
     },
     {
         "id": 16,
-        "question": "I am comfortable presenting my ideas to an audience.",
-        "weights": {"programmer": 0, "ceo": 2, "vcd": 0}
+        "question": "I feel energized when I share my thoughts with a large group.",
+        "weights": {"I": 0, "E": 2}
     },
     {
         "id": 17,
-        "question": "I take pride in making my work visually appealing.",
-        "weights": {"programmer": 0, "ceo": 0, "vcd": 2}
+        "question": "I focus on how things will work in practice rather than imagining possibilities.",
+        "weights": {"S": 2, "N": 0}
     },
     {
         "id": 18,
-        "question": "I enjoy solving big-picture problems.",
-        "weights": {"programmer": 0, "ceo": 2, "vcd": 0}
+        "question": "I enjoy thinking about future possibilities and patterns.",
+        "weights": {"S": 0, "N": 2}
     },
     {
         "id": 19,
-        "question": "I often find myself sketching or doodling in my free time.",
-        "weights": {"programmer": 0, "ceo": 0, "vcd": 2}
+        "question": "I evaluate problems using facts and evidence.",
+        "weights": {"T": 2, "F": 0}
     },
     {
         "id": 20,
-        "question": "I enjoy thinking about how to improve processes or workflows.",
-        "weights": {"programmer": 2, "ceo": 1, "vcd": 0}
+        "question": "I make decisions based on how they will impact relationships.",
+        "weights": {"T": 0, "F": 2}
     },
     {
         "id": 21,
-        "question": "I enjoy working on projects that challenge my creativity.",
-        "weights": {"programmer": 1, "ceo": 1, "vcd": 2}
+        "question": "I like having a clear agenda before starting a project.",
+        "weights": {"J": 2, "P": 0}
     },
     {
         "id": 22,
-        "question": "I prefer to have a clear plan before starting a task.",
-        "weights": {"programmer": 2, "ceo": 1, "vcd": 0}
+        "question": "I enjoy being spontaneous and flexible in my approach to tasks.",
+        "weights": {"J": 0, "P": 2}
     },
     {
         "id": 23,
-        "question": "I enjoy collaborating with others to achieve common goals.",
-        "weights": {"programmer": 0, "ceo": 2, "vcd": 1}
+        "question": "I prefer quiet reflection over lively social events.",
+        "weights": {"I": 2, "E": 0}
     },
     {
         "id": 24,
-        "question": "I take time to evaluate all possible outcomes before making a decision.",
-        "weights": {"programmer": 2, "ceo": 1, "vcd": 0}
+        "question": "I focus on the here and now rather than abstract ideas.",
+        "weights": {"S": 2, "N": 0}
     },
     {
         "id": 25,
-        "question": "I feel motivated when I can see the results of my work.",
-        "weights": {"programmer": 1, "ceo": 1, "vcd": 1}
+        "question": "I often rely on intuition to guide my actions.",
+        "weights": {"S": 0, "N": 2}
     },
     {
         "id": 26,
-        "question": "I am comfortable working under pressure to meet deadlines.",
-        "weights": {"programmer": 1, "ceo": 2, "vcd": 1}
+        "question": "I prioritize efficiency and objective outcomes in my decisions.",
+        "weights": {"T": 2, "F": 0}
     },
     {
         "id": 27,
-        "question": "I enjoy learning new tools or technologies to improve my skills.",
-        "weights": {"programmer": 2, "ceo": 1, "vcd": 1}
+        "question": "I value harmony and consider others' emotions in my decisions.",
+        "weights": {"T": 0, "F": 2}
     },
     {
         "id": 28,
-        "question": "I prefer to approach problems step by step rather than intuitively.",
-        "weights": {"programmer": 2, "ceo": 0, "vcd": 0}
+        "question": "I feel comfortable when I have a step-by-step plan to follow.",
+        "weights": {"J": 2, "P": 0}
     },
     {
         "id": 29,
-        "question": "I enjoy sharing my ideas and receiving feedback from others.",
-        "weights": {"programmer": 0, "ceo": 1, "vcd": 2}
+        "question": "I thrive in unstructured and flexible environments.",
+        "weights": {"J": 0, "P": 2}
     },
     {
         "id": 30,
-        "question": "I like working on tasks that require both logical thinking and creativity.",
-        "weights": {"programmer": 1, "ceo": 1, "vcd": 2}
+        "question": "I feel more comfortable listening than speaking in group discussions.",
+        "weights": {"I": 2, "E": 0}
     }
 ]

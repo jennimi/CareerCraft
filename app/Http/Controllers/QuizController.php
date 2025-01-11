@@ -7,21 +7,30 @@ use Illuminate\Support\Facades\Auth;
 
 class QuizController extends Controller
 {
-    public function showQuiz()
+    /**
+     * Display the MBTI quiz and optionally the result.
+     */
+    public function showQuiz(Request $request)
     {
         // Load questions from JSON
         $questions = json_decode(file_get_contents(base_path('resources/js/questions.js')), true);
         shuffle($questions);
-        return view('quiz', compact('questions'));
+
+        // Default result is null; will be populated after form submission
+        $result = $request->session()->get('result', null);
+
+        return view('quiz', compact('questions', 'result'));
     }
 
+    /**
+     * Handle quiz submission and calculate MBTI result.
+     */
     public function submitQuiz(Request $request)
     {
-        if (!Auth::check()) {
-            return redirect()->route('login')->with('info', 'You need to log in to view the result.');
-        }
-
+        // Load questions for reference
         $questions = json_decode(file_get_contents(base_path('resources/js/questions.js')), true);
+
+        // Validate input
         $request->validate([
             'answers' => 'required|array',
             'answers.*' => 'required|integer|min:1|max:5', // Ensure answers are integers between 1 and 5
@@ -29,25 +38,30 @@ class QuizController extends Controller
 
         $answers = $request->input('answers');
 
+        // Initialize MBTI scores
         $scores = [
-            'programmer' => 0,
-            'ceo' => 0,
-            'vcd' => 0,
+            'I' => 0,
+            'E' => 0,
+            'S' => 0,
+            'N' => 0,
+            'T' => 0,
+            'F' => 0,
+            'J' => 0,
+            'P' => 0,
         ];
 
+        // Calculate scores based on user answers
         foreach ($questions as $question) {
             $questionId = $question['id'];
 
             if (!isset($answers[$questionId])) {
+                continue; // Skip unanswered questions (should not happen with validation)
             }
 
             $answer = $answers[$questionId];
             $weights = $question['weights'];
 
-            // Debugging: Check the current answer and weights
-            // dd($questionId, $answer, $weights);
-
-            // Assign points based on user's answer
+            // Map answer scale to multiplier
             $multiplier = match ($answer) {
                 "1" => -2, // Strongly Disagree
                 "2" => -1, // Disagree
@@ -56,15 +70,23 @@ class QuizController extends Controller
                 "5" => 2,  // Strongly Agree
             };
 
-            foreach ($weights as $job => $weight) {
-                $scores[$job] += $weight * $multiplier;
+            // Apply weights to MBTI dimensions
+            foreach ($weights as $type => $weight) {
+                $scores[$type] += $weight * $multiplier;
             }
         }
 
-        $recommendedJob = array_keys($scores, max($scores))[0];
-        // dd($recommendedJob);
-        // Redirect to the roadmap
-        return redirect()->route('roadmap', ['job' => $recommendedJob]);
+        // Determine MBTI type
+        $mbti = ($scores['I'] >= $scores['E'] ? 'I' : 'E') .
+            ($scores['S'] >= $scores['N'] ? 'S' : 'N') .
+            ($scores['T'] >= $scores['F'] ? 'T' : 'F') .
+            ($scores['J'] >= $scores['P'] ? 'J' : 'P');
+
+        // Store the result in session
+        $request->session()->flash('result', $mbti);
+
+        // Redirect back to the quiz
+        return redirect()->route('quiz');
     }
 
     public function showRoadmap($job)
