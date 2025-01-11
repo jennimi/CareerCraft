@@ -118,7 +118,7 @@
         @yield('content')
     </main>
 
-    <a href="/chatbot"
+    <a href="/chat"
         class="floating-button text-white rounded-full shadow-lg px-4 py-3 flex items-center space-x-2 theme-bg theme-hover">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
             <path

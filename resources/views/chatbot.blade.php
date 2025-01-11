@@ -55,6 +55,20 @@
                 appendMessage('An error occurred. Please try again.', 'llama-message');
             }
         }
+
+        const chatBox = document.getElementById('chatBox');
+
+        // Scroll to the bottom of the chat box on page load
+        window.onload = () => {
+            chatBox.scrollTop = chatBox.scrollHeight;
+        };
+
+        function handleKeyDown(event) {
+            if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault(); // Prevent default behavior (new line)
+                document.getElementById('chatForm').submit(); // Submit the form
+            }
+        }
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
