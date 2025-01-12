@@ -31,60 +31,63 @@
         }
 
         /* Chat Popup */
-        .chat-popup {
-            position: fixed;
-            bottom: 90px;
-            right: 30px;
-            width: 350px;
-            height: 500px;
-            background-color: white;
-            border-radius: 15px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            z-index: 60;
-            display: none;
-            flex-direction: column;
-            overflow: hidden;
-        }
+    .chat-popup {
+        position: fixed;
+        bottom: 90px;
+        right: 30px;
+        width: 400px; /* Increased width */
+        height: 550px; /* Increased height */
+        background-color: white;
+        border-radius: 15px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 60;
+        display: none;
+        flex-direction: column;
+        overflow: hidden;
+    }
 
-        .chat-popup-header {
-            background-color: #766FFF;
-            color: white;
-            padding: 10px 15px;
-            font-weight: bold;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    .chat-popup-header {
+        background-color: #766FFF;
+        color: white;
+        padding: 10px 15px;
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-        .chat-popup-content {
-            flex: 1;
-            padding: 10px;
-            overflow-y: auto;
-            background-color: #f8f9fa;
-        }
+    .chat-popup-content {
+        flex: 1;
+        padding: 10px;
+        overflow-y: auto;
+        background-color: #f8f9fa;
+        font-size: 14px; /* Reduced font size */
+    }
 
-        .chat-popup-footer {
-            padding: 10px;
-            background-color: #f8f9fa;
-            display: flex;
-            gap: 10px;
-        }
+    .chat-popup-footer {
+        padding: 10px;
+        background-color: #f8f9fa;
+        display: flex;
+        gap: 10px;
+    }
 
-        .chat-popup-footer textarea {
-            flex: 1;
-            resize: none;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 5px;
-        }
+    .chat-popup-footer textarea {
+        flex: 1;
+        resize: none;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 5px;
+        font-size: 14px; /* Reduced font size */
+    }
 
-        .chat-popup-footer button {
-            background-color: #766FFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 5px 10px;
-        }
+    .chat-popup-footer button {
+        background-color: #766FFF;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        font-size: 14px; /* Reduced font size */
+    }
     </style>
 </head>
 
@@ -130,7 +133,7 @@
             <div class="chat-popup-header flex items-center gap-3">
                 <!-- Bot Image -->
                 <img src="{{ asset('images/bot.png') }}" alt="Bot" class="w-10 h-10 rounded-full">
-                <span>Chat with AI</span>
+                <span>CareerCraft Mentor</span>
                 <button onclick="toggleChatPopup()"
                     style="background: none; border: none; color: white; margin-left: auto;">&times;</button>
             </div>
