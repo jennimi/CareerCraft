@@ -82,11 +82,37 @@ class QuizController extends Controller
             ($scores['T'] >= $scores['F'] ? 'T' : 'F') .
             ($scores['J'] >= $scores['P'] ? 'J' : 'P');
 
-        // Store the result in session
-        $request->session()->flash('result', $mbti);
+        $mbtiResults = json_decode(file_get_contents(base_path('resources/js/mbtiresult.js')), true);
 
+        foreach ($mbtiResults as $mbtiResult) {
+            if ($mbtiResult['mbti'] = $mbti) {
+                $resultDetails = $mbtiResult;
+            }
+        }
+
+        // Store the result in session
+        // $request->session()->flash('result', $mbti);
+
+        // dd($resultDetails, $mbti);
+        return redirect()->route('quiz.result', [
+            'mbti' => $mbti,
+            'resultDetails' => json_encode($resultDetails), // Pass as a JSON string for simplicity
+        ]);
         // Redirect back to the quiz
-        return redirect()->route('quiz');
+        // return redirect()->route('quiz');
+    }
+
+    public function showResult(Request $request)
+    {
+        // Retrieve data from query parameters
+        $mbti = $request->query('mbti');
+        $resultDetails = json_decode($request->query('resultDetails'), true);
+
+        // Render the result view
+        return view('quiz-result', [
+            'mbti' => $mbti,
+            'resultDetails' => $resultDetails,
+        ]);
     }
 
     public function showRoadmap($job)

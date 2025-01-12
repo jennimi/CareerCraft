@@ -6,6 +6,7 @@ use App\Http\Controllers\QuizController;
 use App\Http\Controllers\ChatbotController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\LlamaController;
+use Illuminate\Http\Request;
 
 Auth::routes();
 
@@ -13,21 +14,27 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/', function () {
     return view('home');
 });
+
+Route::get('/chat/messages', [App\Http\Controllers\LlamaController::class, 'getMessages'])->name('chat.messages');
+
+
+
 Route::get('/services', function () {
     return view('services');
 })->name('services');
-Route::get('/jobs', function () {
+Route::get('/roadmap', function () {
     return view('jobs');
 })->name('jobs');
 Route::get('/about', function () {
     return view('about');
 })->name('about');
 
-Route::get('/chatbot', [ChatbotController::class, 'index']);
-Route::post('/chatbot/send', [ChatbotController::class, 'sendMessage']);
+// Route::get('/chat', [LlamaController::class, 'index']);
+// Route::post('/chatbot/send', [ChatbotController::class, 'sendMessage']);
 
 Route::get('/quiz', [QuizController::class, 'showQuiz'])->name('quiz');
 Route::post('/quiz', [QuizController::class, 'submitQuiz'])->name('quiz.submit');
+Route::get('/quiz/result', [QuizController::class, 'showResult'])->name('quiz.result');
 
 Route::get('/chat', [LlamaController::class, 'index'])->name('chat.index');
 Route::post('/chat', [LlamaController::class, 'generate'])->name('chat.generate');

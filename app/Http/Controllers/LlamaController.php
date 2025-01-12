@@ -16,6 +16,16 @@ class LlamaController extends Controller
         return view('chat', ['messages' => $messages]);
     }
 
+    public function getMessages()
+    {
+        // Retrieve messages from the session
+        $messages = session('messages', []);
+
+        // Return messages as JSON
+        return response()->json(['messages' => $messages]);
+    }
+
+
     public function generate1(Request $request)
     {
         $prompt = $request->input('prompt');
@@ -72,7 +82,8 @@ class LlamaController extends Controller
         }
 
         // Return the response back to the view
-        return view('chat', ['response' => $output, 'prompt' => $prompt]);
+        // return view('chat', ['response' => $output, 'prompt' => $prompt]);
+        return response()->json(['text' => $output]);
     }
 
     public function generate(Request $request)
@@ -139,6 +150,7 @@ class LlamaController extends Controller
         session(['messages' => $messages]);
 
         // Return the updated conversation to the view
-        return view('chat', ['messages' => $messages]);
+        // return view('chat', ['messages' => $messages]);
+        return response()->json(['text' => $output]);
     }
 }

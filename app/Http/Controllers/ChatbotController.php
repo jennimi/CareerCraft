@@ -15,7 +15,7 @@ class ChatbotController extends Controller
     public function sendMessage(Request $request)
     {
         $userMessage = $request->input('message');
-        $apiKey = env('GEMINI_API_KEY');
+        $apiKey = env('REPLICATE_API_TOKEN');
         $url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key={$apiKey}";
 
         $client = new \GuzzleHttp\Client();
@@ -39,7 +39,7 @@ class ChatbotController extends Controller
 
             return response()->json(['reply' => $reply]);
         } catch (\Exception $e) {
-            
+
             return response()->json(['error' => 'Something went wrong.']);
         }
     }

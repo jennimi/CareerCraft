@@ -1,155 +1,155 @@
 [
     {
+        "id": 1,
         "mbti": "INTJ",
         "description": "You love thinking and experimenting with new ideas. You’re very independent and like to analyze theory and numbers. Because you love deep thinking, you prefer positions that allow you to innovate.",
-        "careers":[
+        "careers": [
             "Project Management",
             "System Engineering",
             "Marketing Strategy",
             "System Analysis",
             "Software Engineering",
-            "Financial Analysis",
+            "Financial Analysis"
         ]
     },
     {
+        "id": 2,
         "mbti": "INFJ",
         "description": "This personality type is very rare - only 1% of the population are INFJs. You approach work with deep thoughtfulness, care, and imagination. You care deeply about others, but you are not a dreamer. You take actionable steps to make the world a better place.",
-        "careers":[
+        "careers": [
             "Counselor",
             "Psychologist",
             "Human Resources",
             "Writing/Editing",
             "Environmental Science",
-            "Special Education",
+            "Special Education"
         ]
     },
     {
+        "id": 3,
         "mbti": "ISTJ",
         "description": "You are rational and don’t like making impulsive decisions. You make for a great employee because you are reliable, objective, and sharp. You respect authority and want a sense of security and consistency from your career.",
-        "careers":[
+        "careers": [
             "Military & Police",
             "Legal counsel",
             "Supply Chain Management",
             "Medical",
             "Inspection (of any kind)",
             "Financial management",
-            "Data analysis",
+            "Data analysis"
         ]
     },
     {
+        "id": 4,
         "mbti": "ISFJ",
         "description": "You are efficient and responsible but have a great desire to help others. Your personality traits are essential to the modern world - you are altruistic and skilled, so you usually find yourself happy in the service of others.",
-        "careers":[
+        "careers": [
             "Nursing",
             "Teaching",
             "Social work",
             "Religious work",
             "Customer service",
-            "Human resources",
+            "Human resources"
         ]
     },
     {
+        "id": 5,
         "mbti": "ISTP",
         "description": "You are highly creative and have an individualistic mindset - stopping at nothing to achieve your goals. You thrive in the unknown and are a born problem-solver, although the problems you want to solve might not be so practical. This combination of curiosity and grit make ISFJs one of the most unique personality types out there.",
-        "careers":[
+        "careers": [
             "Mechanics",
             "Engineering",
             "Forensic science",
             "Sports/Athletics",
             "Intelligence agencies",
             "Gastronomy",
-            "Detective work",
+            "Detective work"
         ]
     },
     {
+        "id": 6,
         "mbti": "ISFP",
         "description": "You love adventures and living in the moment. You use aesthetics and design to fuel your love for beauty. You don’t care much about wealth, power, or security. In your job, you are looking for creative freedom and a chance to express yourself artistically.",
-        "careers":[
+        "careers": [
             "Fashion design",
-            "Cosmetology ",
+            "Cosmetology",
             "Graphic design",
             "Music",
             "Fitness training",
             "Art director",
-            "Photography",
+            "Photography"
         ]
     },
     {
+        "id": 7,
         "mbti": "ENTJ",
         "description": "You make decisions quickly and are motivated by external rewards. You usually take charge of teams and have high self-confidence. You make sure to exercise your authority so that everyone is doing what they’re supposed to and things are getting done.",
-        "careers":[
-            "Top executive ",
+        "careers": [
+            "Top executive",
             "Emergency management",
             "Entrepreneurship",
             "Corporate strategy",
-            "Politics",
+            "Politics"
         ]
     },
     {
+        "id": 8,
         "mbti": "ENTP",
         "description": "You are bold, creative, and sarcastic, and are not afraid of hard work to reach your goals. You have a quick wit and think well on your feet, which makes you a great debater. At work, you enjoy creating solutions for technical and intellectual problems.",
-        "careers":[
+        "careers": [
             "Stock trading",
             "Sales",
             "Film production",
             "Public relations",
-            "Legal counseling ",
-            "Engineering",
+            "Legal counseling",
+            "Engineering"
         ]
     },
     {
+        "id": 9,
         "mbti": "ENFJ",
         "description": "You love helping others and being the center of attention. You have strong ideas and values and are not afraid to stand for them. You reach your meaningful goals through creative energy and collaboration.",
-        "careers":[
+        "careers": [
             "Teaching",
-            "Counseling ",
+            "Counseling",
             "Human resources",
             "Politics",
             "Life coaching",
-            "Motivational speaking",
+            "Motivational speaking"
         ]
     },
     {
+        "id": 10,
         "mbti": "ENFP",
         "description": "You are a true free spirit - charming, independent, and energetic. You enjoy interacting with others and exploring new ideas and want your work life to reflect that. You find EVERYTHING interesting, so you can have a hard time choosing a career path.",
-        "careers":[
+        "careers": [
             "Sales management",
             "Real estate",
             "Customer service",
             "Film direction",
             "Screenwriting",
-            "Marketing",
+            "Marketing"
         ]
     },
     {
+        "id": 11,
         "mbti": "ESTJ",
         "description": "You are a true leader and honor tradition and order. You have a strong moral compass and enjoy leading others and being busy. You gravitate towards careers that give you a sense of structure and organization, where you can exercise your responsibility and loyalty.",
-        "careers":[
+        "careers": [
             "Sales engineering",
             "Credit analysis",
             "Insurance",
             "Real estate",
             "Corporate management",
             "Corporate executive",
-            "Public administration",
+            "Public administration"
         ]
     },
     {
-        "mbti": "INFJ",
-        "description": "This personality type is very rare - only 1% of the population are INFJs. You approach work with deep thoughtfulness, care, and imagination. You care deeply about others, but you are not a dreamer. You take actionable steps to make the world a better place.",
-        "careers":[
-            "Counselor",
-            "Psychologist",
-            "Human Resources",
-            "Writing/Editing",
-            "Environmental Science",
-            "Special Education",
-        ]
-    },
-    {
+        "id": 12,
         "mbti": "ESTP",
         "description": "You are energetic, goal-oriented, and are inspired by short-term achievements. You want to be where the action is - making decisions daily while thinking on your feet. These are the most popular of the personality types, and they have an easy time networking and interacting with others.",
-        "careers":[
+        "careers": [
             "Entrepreneurship",
             "Management",
             "Politics",
@@ -157,32 +157,60 @@
             "Acting",
             "Front office clerk",
             "In-the-field reporting",
-            "Human resources",
+            "Human resources"
         ]
     },
     {
+        "id": 13,
         "mbti": "ESFJ",
-        "description": "Like all extroverts, you enjoy interacting with others and taking part in your community. You are an altruist and love to be of service to others. You are extremely loyal and well-organized and avoid conflict at all costs. You are happy to do what needs to be done and don’t shy away from routines. ",
-        "careers":[
+        "description": "Like all extroverts, you enjoy interacting with others and taking part in your community. You are an altruist and love to be of service to others. You are extremely loyal and well-organized and avoid conflict at all costs. You are happy to do what needs to be done and don’t shy away from routines.",
+        "careers": [
             "Event planning",
             "Nursing",
             "Office management",
             "Paralegal",
             "Medical assistance",
             "Receptionist",
-            "Catering",
+            "Catering"
         ]
     },
     {
+        "id": 14,
         "mbti": "ESFP",
         "description": "As an ESFP, you are definitely THE life of the party. You randomly start singing and dancing and love giving out time and energy to other people. Any job that restrains you from that freedom will 100% make you miserable. You want excitement, interaction, and a chance to shine!",
-        "careers":[
+        "careers": [
             "Event planning",
             "Sales",
             "Trip planning",
             "Tour guides",
             "Stand-up comedy",
-            "Theatre",
+            "Theatre"
         ]
     },
+    {
+        "id": 15,
+        "mbti": "INTP",
+        "description": "You love thinking and experimenting with new ideas. You’re very independent and like to analyze theory and numbers. Because you love deep thinking, you excel at careers which let you innovate.",
+        "careers": [
+            "Computer Programming",
+            "Software Development",
+            "Research & Academia",
+            "Business Analytics",
+            "Corporate Strategy",
+            "Technical Writing"
+        ]
+    },
+    {
+        "id": 16,
+        "mbti": "INFP",
+        "description": "You are quiet, imaginative, and open-minded. Although intelligent, you dislike school and dread the thought of years of unimaginative routine. This is why anything that is routine might not work for you.",
+        "careers": [
+            "Writing",
+            "Music",
+            "Visual Arts",
+            "Massage Therapy",
+            "Social Work",
+            "Museum curation"
+        ]
+    }
 ]
