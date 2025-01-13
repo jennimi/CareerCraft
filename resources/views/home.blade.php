@@ -49,7 +49,7 @@
                 <h3 class="text-xl font-semibold text-[#766FFF] mb-4">Standard Plan</h3>
                 <ul class="text-gray-700 mb-6 text-left list-disc list-inside">
                     <li>Unlock all quizzes</li>
-                    <li>Access detailed career roadmaps</li>
+                    <li>Generate 5 detailed Roadmap to your liking</li>
                 </ul>
                 <p class="text-2xl font-bold text-gray-900 mb-6">IDR 50,000/month</p>
                 <a href="{{ route('subscribe', ['plan' => 'Standard']) }}"
@@ -64,6 +64,7 @@
                 <h3 class="text-xl font-semibold text-[#766FFF] mb-4">Premium Plan</h3>
                 <ul class="text-gray-700 mb-6 text-left list-disc list-inside">
                     <li>All Standard Plan features</li>
+                    <li>Generate Unlimited Roadmaps</li>
                     <li>Chatbot assistance</li>
                     <li>Personalized career guidance</li>
                 </ul>
