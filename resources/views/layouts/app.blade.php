@@ -31,63 +31,68 @@
         }
 
         /* Chat Popup */
-    .chat-popup {
-        position: fixed;
-        bottom: 90px;
-        right: 30px;
-        width: 400px; /* Increased width */
-        height: 550px; /* Increased height */
-        background-color: white;
-        border-radius: 15px;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        z-index: 60;
-        display: none;
-        flex-direction: column;
-        overflow: hidden;
-    }
+        .chat-popup {
+            position: fixed;
+            bottom: 90px;
+            right: 30px;
+            width: 400px;
+            /* Increased width */
+            height: 550px;
+            /* Increased height */
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 60;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+        }
 
-    .chat-popup-header {
-        background-color: #766FFF;
-        color: white;
-        padding: 10px 15px;
-        font-weight: bold;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+        .chat-popup-header {
+            background-color: #766FFF;
+            color: white;
+            padding: 10px 15px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    .chat-popup-content {
-        flex: 1;
-        padding: 10px;
-        overflow-y: auto;
-        background-color: #f8f9fa;
-        font-size: 14px; /* Reduced font size */
-    }
+        .chat-popup-content {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+            background-color: #f8f9fa;
+            font-size: 14px;
+            /* Reduced font size */
+        }
 
-    .chat-popup-footer {
-        padding: 10px;
-        background-color: #f8f9fa;
-        display: flex;
-        gap: 10px;
-    }
+        .chat-popup-footer {
+            padding: 10px;
+            background-color: #f8f9fa;
+            display: flex;
+            gap: 10px;
+        }
 
-    .chat-popup-footer textarea {
-        flex: 1;
-        resize: none;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        padding: 5px;
-        font-size: 14px; /* Reduced font size */
-    }
+        .chat-popup-footer textarea {
+            flex: 1;
+            resize: none;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 5px;
+            font-size: 14px;
+            /* Reduced font size */
+        }
 
-    .chat-popup-footer button {
-        background-color: #766FFF;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        padding: 5px 10px;
-        font-size: 14px; /* Reduced font size */
-    }
+        .chat-popup-footer button {
+            background-color: #766FFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            font-size: 14px;
+            /* Reduced font size */
+        }
     </style>
 </head>
 
@@ -168,8 +173,17 @@
             </div>
         </div>
     </footer>
-
     <script>
+        // Existing functions...
+
+        // Add event listener to the textarea
+        document.getElementById('userMessage').addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault(); // Prevent new line
+                sendMessage(); // Call the sendMessage function
+            }
+        });
+
         function toggleChatPopup() {
             const chatPopup = document.getElementById('chatPopup');
             const chatContent = document.getElementById('chatContent');
@@ -194,12 +208,12 @@
                                     'bg-gray-200 text-gray-900';
 
                                 chatContent.innerHTML += `
-                            <div class="mb-2 ${alignment}">
-                                <div class="inline-block ${bgColor} p-2 rounded-lg max-w-[70%]">
-                                    ${message.text}
+                                <div class="mb-2 ${alignment}">
+                                    <div class="inline-block ${bgColor} p-2 rounded-lg max-w-[70%]">
+                                        ${message.text}
+                                    </div>
                                 </div>
-                            </div>
-                        `;
+                            `;
                             });
                         } else {
                             chatContent.innerHTML =
@@ -215,7 +229,6 @@
             }
         }
 
-
         function sendMessage() {
             const userMessage = document.getElementById('userMessage').value;
             if (!userMessage.trim()) return;
@@ -223,12 +236,12 @@
             // Append user's message
             const chatContent = document.getElementById('chatContent');
             chatContent.innerHTML += `
-                <div class="mb-2 text-right">
-                    <div class="inline-block bg-[#766FFF] text-white p-2 rounded-lg max-w-[70%]">
-                        ${userMessage}
-                    </div>
+            <div class="mb-2 text-right">
+                <div class="inline-block bg-[#766FFF] text-white p-2 rounded-lg max-w-[70%]">
+                    ${userMessage}
                 </div>
-            `;
+            </div>
+        `;
             document.getElementById('userMessage').value = '';
 
             // Send the message to the server
@@ -242,12 +255,12 @@
                 success: function(response) {
                     // Append bot's response
                     chatContent.innerHTML += `
-                        <div class="mb-2 text-left">
-                            <div class="inline-block bg-gray-200 text-gray-900 p-2 rounded-lg max-w-[70%]">
-                                ${response.text}
-                            </div>
+                    <div class="mb-2 text-left">
+                        <div class="inline-block bg-gray-200 text-gray-900 p-2 rounded-lg max-w-[70%]">
+                            ${response.text}
                         </div>
-                    `;
+                    </div>
+                `;
                     chatContent.scrollTop = chatContent.scrollHeight; // Scroll to bottom
                 },
                 error: function() {
